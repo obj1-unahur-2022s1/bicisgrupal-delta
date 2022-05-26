@@ -1,0 +1,29 @@
+import bicis.*
+import depositos.*
+import accesorios.*
+
+describe "Test de Depósito"{
+	test "Test de metodos de Depósito"{
+		var bici1= new Bicicleta(rodado=28, largo=150, marca= "Olmo", accesorios=[farolito])
+
+		canasto.volumen(8)
+		morral.largo(21)
+		morral.ojoDeGato(true)
+		var bici2= new Bicicleta(rodado=26, largo=110, marca= "Legnano", accesorios=[farolito,canasto,morral])
+
+		morral.largo(6)
+		morral.ojoDeGato(false)
+		var bici3= new Bicicleta(rodado=20, largo=90, marca= "Legnano", accesorios=[morral])
+
+
+		var depo= new Deposito (deposito=[bici1,bici2, bici3])
+
+		assert.equals([bici1, bici2], depo.bicisRapidas())
+		assert.equals(["Legnano", "Olmo"], depo.marca())
+		assert.notThat(depo.esNocturno())
+		assert.that(depo.tieneBiciParaCarga(10))
+		assert.notThat(depo.tieneBiciParaCarga(50))
+	}
+
+
+} 
