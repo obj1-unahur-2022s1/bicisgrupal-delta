@@ -1,3 +1,8 @@
+/* Para agregar más accesorios se deben de crear más obejtos, y estos deben de tener métodos
+ * polimorficos a los demás accesorios.
+ */
+
+
 object farolito{
 	method peso()= 0.5 
 	method carga()= 0

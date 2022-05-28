@@ -8,22 +8,23 @@ class Deposito{
 	method marca()= deposito.map({b=> b.marca()}).asSet().asList()
 	method esNocturno()= deposito.all({b=> b.tieneLuz()})
 	method tieneBiciParaCarga(kg)= deposito.any({b=>b.carga()> kg})
-	
-	method bicisCompanierasDe(unaBici) = deposito.filter({ b =>( b.marca() ==unaBici.marca())  
-										and  (b.largo() - unaBici.largo() <=10)	})
-	
-<<<<<<< HEAD
-	
-=======
+	method bicisCompanierasDe(unaBici) = deposito.filter({ b =>( b.marca() == unaBici.marca()) and  (b.largo() - unaBici.largo() <=10)	})		
+	//method bicisLargas() = deposito.filter ( { b => b.largo()> 170 } )
+	//method cargaTotalBiciLarga() = deposito.map ( { b => b.bicisLargas().carga() } ).sum()
 	method cargaTotalBiciLarga()  = deposito.map({ b => if (b.largo() > 170) { b.carga()}}).sum()
->>>>>>> db4a5262235c37e93c43b312427e831c6e7a159b
-	method marcaBiciMasRapida() = deposito.max( { b=> b.velocidad() } ).marca()
+	method bicisSinAccesrios()= deposito.count({b => b.accesorios().isEmpty()})
+	
+	// DESAFIOS
+	
+	method hayCompaneras()= not deposito.any({b=> self.bicisCompanierasDe(b).isEmpty()})
 	
 	
-	method bicisLargas() = deposito.filter ( { b => b.largo()> 170 } )
-	method cargaTotalBiciLarga() = deposito.map ( { b => b.bicisLargas().carga() } ).sum()
 
-} 
+	method primeraConLuz() = (0..deposito.size()).find ({ idx => deposito.get(idx).tieneLuz() })
+	
+	method sublista() = deposito.subList(self.primeraConLuz(), deposito.size()-1) 
+	
+	method seHizoLaLuz()= self.sublista().all({b => b.tieneLuz()})
 
-
+}
 	

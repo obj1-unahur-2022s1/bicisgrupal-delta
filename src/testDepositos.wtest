@@ -24,16 +24,9 @@ describe "Test de Depósito"{
 		assert.notThat(depo.esNocturno())
 		assert.that(depo.tieneBiciParaCarga(10))
 		assert.notThat(depo.tieneBiciParaCarga(50))
-<<<<<<< HEAD
-		
-		var bici4 = new Bicicleta(rodado=26, largo=140, marca= "Olmo", accesorios=[farolito])
 		
 		assert.equals([bici1], depo.bicisCompanierasDe(bici4))
 		
-		
-		
-=======
-		assert.equals([bici1], depo.bicisCompanierasDe(bici4))
 		
 		var bici5= new Bicicleta(rodado=20, largo=180, marca= "Legnano", accesorios=[farolito])
 		var bici6= new Bicicleta(rodado=20, largo=190, marca= "Legnano", accesorios=[canasto])
@@ -41,7 +34,28 @@ describe "Test de Depósito"{
 		var depo1= new Deposito (deposito=[bici5, bici6])
 		
 		assert.equals(40 , depo1.cargaTotalBiciLarga())
->>>>>>> db4a5262235c37e93c43b312427e831c6e7a159b
+		
+		
+		// Bicis sin accesrios 
+		
+		var bici7= new Bicicleta(rodado=20, largo=180, marca= "Legnano", accesorios=[farolito])
+		var bici8= new Bicicleta(rodado=20, largo=190, marca= "Olmo", accesorios=[])
+		var bici9= new Bicicleta(rodado=20, largo=190, marca= "Olmo", accesorios=[])
+		var depo3= new Deposito (deposito=[bici7, bici8,bici9])
+		
+		assert.equals(2, depo3.bicisSinAccesrios())
+		
+		// DESAFIOS
+		
+		assert.that(depo3.hayCompaneras())
+		
+		var bici10= new Bicicleta(rodado=20, largo=180, marca= "Legnano", accesorios=[])
+		var bici11= new Bicicleta(rodado=20, largo=190, marca= "Olmo", accesorios=[farolito])
+		var bici12= new Bicicleta(rodado=23, largo=190, marca= "Olmo", accesorios=[farolito])
+		var depo4= new Deposito (deposito=[bici10, bici11,bici12])
+		
+		assert.that(depo4.seHizoLaLuz())
+
 	}
 
 
