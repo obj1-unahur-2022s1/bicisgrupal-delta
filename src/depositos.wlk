@@ -12,7 +12,11 @@ class Deposito{
 	method bicisCompanierasDe(unaBici) = deposito.filter({ b =>( b.marca() ==unaBici.marca())  
 										and  (b.largo() - unaBici.largo() <=10)	})
 	
+<<<<<<< HEAD
 	
+=======
+	method cargaTotalBiciLarga()  = deposito.map({ b => if (b.largo() > 170) { b.carga()}}).sum()
+>>>>>>> db4a5262235c37e93c43b312427e831c6e7a159b
 	method marcaBiciMasRapida() = deposito.max( { b=> b.velocidad() } ).marca()
 	
 	

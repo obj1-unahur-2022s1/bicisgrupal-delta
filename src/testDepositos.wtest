@@ -14,6 +14,7 @@ describe "Test de Depósito"{
 		morral.largo(6)
 		morral.ojoDeGato(false)
 		var bici3= new Bicicleta(rodado=20, largo=90, marca= "Legnano", accesorios=[morral])
+        var bici4 = new Bicicleta(rodado=26, largo=140, marca= "Olmo", accesorios=[farolito])
 
 
 		var depo= new Deposito (deposito=[bici1,bici2, bici3])
@@ -23,6 +24,7 @@ describe "Test de Depósito"{
 		assert.notThat(depo.esNocturno())
 		assert.that(depo.tieneBiciParaCarga(10))
 		assert.notThat(depo.tieneBiciParaCarga(50))
+<<<<<<< HEAD
 		
 		var bici4 = new Bicicleta(rodado=26, largo=140, marca= "Olmo", accesorios=[farolito])
 		
@@ -30,6 +32,16 @@ describe "Test de Depósito"{
 		
 		
 		
+=======
+		assert.equals([bici1], depo.bicisCompanierasDe(bici4))
+		
+		var bici5= new Bicicleta(rodado=20, largo=180, marca= "Legnano", accesorios=[farolito])
+		var bici6= new Bicicleta(rodado=20, largo=190, marca= "Legnano", accesorios=[canasto])
+		canasto.volumen(20)
+		var depo1= new Deposito (deposito=[bici5, bici6])
+		
+		assert.equals(40 , depo1.cargaTotalBiciLarga())
+>>>>>>> db4a5262235c37e93c43b312427e831c6e7a159b
 	}
 
 
