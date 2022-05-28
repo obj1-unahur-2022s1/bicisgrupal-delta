@@ -23,6 +23,13 @@ describe "Test de Depósito"{
 		assert.notThat(depo.esNocturno())
 		assert.that(depo.tieneBiciParaCarga(10))
 		assert.notThat(depo.tieneBiciParaCarga(50))
+		
+		var bici4 = new Bicicleta(rodado=26, largo=140, marca= "Olmo", accesorios=[farolito])
+		
+		assert.equals([bici1], depo.bicisCompanierasDe(bici4))
+		
+		
+		
 	}
 
 

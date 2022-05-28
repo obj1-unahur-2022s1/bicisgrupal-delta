@@ -1,5 +1,6 @@
 import bicis.*
 import accesorios.*
+import depositos.*
 
 describe "Test de Bicicletas con accesorios"{
 	test "Bici #1"{

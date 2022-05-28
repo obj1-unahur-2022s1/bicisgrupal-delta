@@ -1,3 +1,5 @@
+import depositos.*
+
 class Bicicleta{
 	var property rodado
 	var property largo
