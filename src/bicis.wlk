@@ -12,4 +12,5 @@ class Bicicleta{
 	method peso()= accesorios.sum({a => a.peso() }) + rodado / 2
 	method tieneLuz()= accesorios.any({a => a.esLuminoso()})
 	method accesriosLivianos()= accesorios.count({a => a.peso()< 1})
+	
 }

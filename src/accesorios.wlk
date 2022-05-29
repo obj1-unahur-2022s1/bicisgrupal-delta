@@ -9,14 +9,14 @@ object farolito{
 	method esLuminoso()= true
 }
 
-object canasto{
+class Canasto{
 	var property volumen
 	method peso()= volumen / 10
 	method carga()= volumen * 2
 	method esLuminoso()= false
 }
 
-object morral{
+class Morral{
 	var property largo
 	var property ojoDeGato
 	method peso()= 1.2

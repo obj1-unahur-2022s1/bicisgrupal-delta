@@ -15,10 +15,11 @@ describe "Test de Bicicletas con accesorios"{
 	}
 
 	test "Bici #2"{
-		canasto.volumen(8)
-		morral.largo(21)
-		morral.ojoDeGato(true)
-		var bici2= new Bicicleta(rodado=26, largo=110, marca= "Legnano", accesorios=[farolito,canasto,morral])
+		
+		const canasto2= new Canasto(volumen=8)
+		const morral2= new Morral(largo=21 , ojoDeGato= true)
+		var bici2= new Bicicleta(rodado=26, largo=110, marca= "Legnano", accesorios=[farolito,canasto2,morral2])
+		
 
 		assert.equals(80, bici2.altura())
 		assert.equals(28, bici2.velocidad())
@@ -31,10 +32,10 @@ describe "Test de Bicicletas con accesorios"{
 
 
 	test "Bici #3"{
-
-		morral.largo(6)
-		morral.ojoDeGato(false)
-		var bici3= new Bicicleta(rodado=20, largo=90, marca= "Legnano", accesorios=[morral])
+		
+        const morral3= new Morral(largo=6 , ojoDeGato= false)
+		var bici3= new Bicicleta(rodado=20, largo=90, marca= "Legnano", accesorios=[morral3])
+		
 
 		assert.equals(65, bici3.altura())
 		assert.equals(22, bici3.velocidad())

@@ -6,14 +6,15 @@ describe "Test de Depósito"{
 	test "Test de metodos de Depósito"{
 		var bici1= new Bicicleta(rodado=28, largo=150, marca= "Olmo", accesorios=[farolito])
 
-		canasto.volumen(8)
-		morral.largo(21)
-		morral.ojoDeGato(true)
-		var bici2= new Bicicleta(rodado=26, largo=110, marca= "Legnano", accesorios=[farolito,canasto,morral])
+		const canasto2= new Canasto(volumen=8)
+		const morral2= new Morral(largo=21 , ojoDeGato= true)
+		var bici2= new Bicicleta(rodado=26, largo=110, marca= "Legnano", accesorios=[farolito,canasto2,morral2])
+		
 
-		morral.largo(6)
-		morral.ojoDeGato(false)
-		var bici3= new Bicicleta(rodado=20, largo=90, marca= "Legnano", accesorios=[morral])
+		const morral3= new Morral(largo=6 , ojoDeGato= false)
+		var bici3= new Bicicleta(rodado=20, largo=90, marca= "Legnano", accesorios=[morral3])
+		
+		
         var bici4 = new Bicicleta(rodado=26, largo=140, marca= "Olmo", accesorios=[farolito])
 
 
@@ -29,8 +30,10 @@ describe "Test de Depósito"{
 		
 		
 		var bici5= new Bicicleta(rodado=20, largo=180, marca= "Legnano", accesorios=[farolito])
-		var bici6= new Bicicleta(rodado=20, largo=190, marca= "Legnano", accesorios=[canasto])
-		canasto.volumen(20)
+		const canasto6= new Canasto(volumen=20)
+		var bici6= new Bicicleta(rodado=20, largo=190, marca= "Legnano", accesorios=[canasto6])
+		
+	
 		var depo1= new Deposito (deposito=[bici5, bici6])
 		
 		assert.equals(40 , depo1.cargaTotalBiciLarga())

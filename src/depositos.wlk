@@ -9,9 +9,7 @@ class Deposito{
 	method esNocturno()= deposito.all({b=> b.tieneLuz()})
 	method tieneBiciParaCarga(kg)= deposito.any({b=>b.carga()> kg})
 	method bicisCompanierasDe(unaBici) = deposito.filter({ b =>( b.marca() == unaBici.marca()) and  (b.largo() - unaBici.largo() <=10)	})		
-	//method bicisLargas() = deposito.filter ( { b => b.largo()> 170 } )
-	//method cargaTotalBiciLarga() = deposito.map ( { b => b.bicisLargas().carga() } ).sum()
-	method cargaTotalBiciLarga()  = deposito.map({ b => if (b.largo() > 170) { b.carga()}}).sum()
+	method cargaTotalBiciLarga()  = deposito.map({ b =>if (b.largo()>170){b.carga()}}).sum()
 	method bicisSinAccesrios()= deposito.count({b => b.accesorios().isEmpty()})
 	
 	// DESAFIOS
